@@ -1,0 +1,23 @@
+.navRoom {
+  margin-top: 50px;
+}
+.navPlaceholder {
+  height: 50px;
+}
+.copyClipboard {
+  margin-left: 10px;
+  margin-top: -2px;
+  float: right;
+}
+.RoomIDCopy {
+  width: 310px;
+}
+.RoomIDCopy:hover {
+  cursor: pointer;
+  user-select: none;
+}
+.voteOverlay {
+  margin-top: -30px;
+  width: 250px;
+  position: fixed;
+}

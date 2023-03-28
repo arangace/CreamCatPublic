@@ -1,0 +1,67 @@
+.playbar {
+  position: fixed;
+  right: 0;
+  left: 0;
+  width: 100vw;
+  height: 140px;
+  bottom: 0;
+  background: #343a40;
+}
+
+.playbarContainer {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas: "left center right";
+}
+.progressBar {
+  margin-top: 10px;
+  margin-bottom: -10px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+.durationTime {
+  margin-top: -20px;
+  margin-bottom: -10px;
+}
+.songLengthTime {
+  margin-top: -15px;
+  margin-bottom: -10px;
+  float: right;
+}
+.songControls {
+  grid-area: left;
+  float: left;
+}
+
+.volumeControls {
+  display: block;
+  grid-area: right;
+  background: #343a40;
+  margin: auto;
+  float: right;
+}
+
+.volumeSlider {
+  margin-top: 25px;
+  float: right;
+}
+.songInfo {
+  margin-top: 10px;
+  grid-area: left;
+  width: 500px;
+}
+.songInfoText {
+  width: 500px;
+  height: 100px;
+}
+.limitTextLength {
+  display: block;
+  width: 300px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.titleText {
+  font-size: 15px;
+}

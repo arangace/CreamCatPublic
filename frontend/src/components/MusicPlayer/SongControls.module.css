@@ -1,0 +1,20 @@
+.songControls {
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+.playBtn {
+  margin-top: 20px;
+  background: #343a40;
+  border: #343a40;
+  color: gray;
+  float: left;
+}
+.voteSkip {
+  margin-top: 20px;
+  background: #343a40;
+  border: #343a40;
+  color: gray;
+  float: right;
+}
