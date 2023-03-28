@@ -4,10 +4,10 @@
   "description": "",
   "main": "./src/server.js",
   "scripts": {
-    "start": "node -r esm ./src/server.js",
-    "nodemon": "nodemon -r esm ./src/server.js",
+    "start": "node -r esm ./server.js",
+    "nodemon": "nodemon -r esm ./server.js",
     "server": "npm run start",
-    "production": "cross-env NODE_ENV=production PORT=3000 node -r esm ./src/server.js",
+    "production": "cross-env NODE_ENV=production PORT=3000 node -r esm ./server.js",
     "init-db": "node -r esm ./src/db/init-db.js",
     "test": "jest"
   },
