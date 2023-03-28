@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "./backend/src/server.js",
+      "src": "./backend/server.js",
       "use": "@vercel/node"
     },
     {
@@ -14,7 +14,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/backend/src/server.js"
+      "destination": "/backend/server.js"
     }
   ]
 }

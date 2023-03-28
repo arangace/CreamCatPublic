@@ -19,13 +19,13 @@ app.use(express.static(path.join(__dirname, "../../frontend/public")));
 
 // Delete expired rooms from database
 async function clearStaleRoom() {
-  const roomsToBeDeleted = await retrieveStaleRooms(dayjs().add(-1, "hour"));
-  if (roomsToBeDeleted) {
-    roomsToBeDeleted.forEach(async (room) => {
-      await deleteSongs(room._id);
-      await deleteRoom(room._id);
-    });
-  }
+    const roomsToBeDeleted = await retrieveStaleRooms(dayjs().add(-1, "hour"));
+    if (roomsToBeDeleted) {
+        roomsToBeDeleted.forEach(async (room) => {
+            await deleteSongs(room._id);
+            await deleteRoom(room._id);
+        });
+    }
 }
 
 // Check and delete expired rooms every minute
@@ -33,15 +33,15 @@ setInterval(clearStaleRoom, 60000);
 
 // When running in production mode
 if (process.env.NODE_ENV === "production") {
-  console.log("Running in production!");
+    console.log("Running in production!");
 
-  // Make build folder public
-  app.use(express.static(path.join(__dirname, "../../frontend/build")));
+    // Make build folder public
+    app.use(express.static(path.join(__dirname, "../../frontend/build")));
 
-  // Serve up index.html by default
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../../frontend/build/index.html"));
-  });
+    // Serve up index.html by default
+    app.get("*", (req, res) => {
+        res.sendFile(path.join(__dirname, "../../frontend/build/index.html"));
+    });
 }
 
 // Setup socket.io server
@@ -55,14 +55,7 @@ app.set("socketio", io);
 
 // Start the DB running. Then, once it's connected, start the server.
 connectToDatabase().then(() =>
-  server.listen(port, () =>
-    console.log(`App server listening on port ${port}!`)
-  )
+    server.listen(port, () =>
+        console.log(`App server listening on port ${port}!`)
+    )
 );
-// static files (build of your frontend)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../frontend", "build")));
-  app.get("/*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../frontend", "build", "index.html"));
-  });
-}
